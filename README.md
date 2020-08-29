@@ -3,7 +3,31 @@ Wallace使用指南
 
 ## Table of Contents
 
-[TOC]
+- [Wallace使用指南](#wallace----)
+  * [Table of Contents](#table-of-contents)
+  * [專案介紹](#----)
+  * [使用教學](#----)
+    + [Wallace (物種分布模型) 操作](#wallace------------)
+      - [引用文獻](#----)
+      - [環境建置](#----)
+      - [以Wallace進行SDM](#-wallace--sdm)
+        * [Obtain Occurrence Data](#obtain-occurrence-data)
+        * [Process Occurrence Data](#process-occurrence-data)
+        * [Obtain Environmental Data](#obtain-environmental-data)
+        * [Process Environmental Data](#process-environmental-data)
+        * [Partition occurrences](#partition-occurrences)
+        * [Model](#model)
+        * [Visualize](#visualize)
+        * [Project](#project)
+        * [Extracting the code](#extracting-the-code)
+    + [rasterVis (出圖) 操作](#rastervis--------)
+  * [結語](#--)
+  * [延伸閱讀](#----)
+  * [變更日誌](#----)
+  * [Appendix and FAQ](#appendix-and-faq)
+          + [tags: `GIS` `Documentation` `SDMs` `R`](#tags---gis---documentation---sdms---r-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## 專案介紹
 
