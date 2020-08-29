@@ -1,8 +1,3 @@
----
-title: 'Wallace使用指南'
-disqus: hackmd
----
-
 Wallace使用指南
 ===
 
