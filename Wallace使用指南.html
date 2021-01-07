@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Wallace使用指南 - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:50%;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;text-decoration:none;padding-left:22px}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="false"><h1 id="Wallace使用指南" data-id="Wallace使用指南"><a class="anchor hidden-xs" href="#Wallace使用指南" title="Wallace使用指南"><span class="octicon octicon-link"></span></a><span>Wallace使用指南</span></h1><h2 id="Table-of-Contents" data-id="Table-of-Contents"><a class="anchor hidden-xs" href="#Table-of-Contents" title="Table-of-Contents"><span class="octicon octicon-link"></span></a><span>Table of Contents</span></h2><p><span class="toc"><ul>
+<li><a href="#Wallace使用指南" title="Wallace使用指南">Wallace使用指南</a><ul>
+<li><a href="#Table-of-Contents" title="Table of Contents">Table of Contents</a></li>
+<li><a href="#專案介紹" title="專案介紹">專案介紹</a></li>
+<li><a href="#使用教學" title="使用教學">使用教學</a><ul>
+<li><a href="#Wallace-物種分布模型-操作" title="Wallace (物種分布模型) 操作">Wallace (物種分布模型) 操作</a></li>
+<li><a href="#rasterVis-出圖-操作" title="rasterVis (出圖) 操作">rasterVis (出圖) 操作</a></li>
+</ul>
+</li>
+<li><a href="#結語" title="結語">結語</a></li>
+<li><a href="#延伸閱讀" title="延伸閱讀">延伸閱讀</a></li>
+<li><a href="#Acknowledgment" title="Acknowledgment">Acknowledgment</a></li>
+<li><a href="#變更日誌" title="變更日誌">變更日誌</a></li>
+<li><a href="#Appendix-and-FAQ" title="Appendix and FAQ">Appendix and FAQ</a></li>
+</ul>
+</li>
+</ul>
+</span></p><h2 id="專案介紹" data-id="專案介紹"><a class="anchor hidden-xs" href="#專案介紹" title="專案介紹"><span class="octicon octicon-link"></span></a><span>專案介紹</span></h2><p><span>本指南的目的是引導讀者進行物種分布模型的建立 (又可稱為物種的「生態棲位模擬」)，並將結果出圖呈現。我們使用的平台為R語言，此為在生態、演化領域被廣為使用的程式語言，透過程式語言進行模型配適，我們可以完全重現每一次的分析過程，並且可以將需要重複進行的步驟交由電腦自動完成，將寶貴的時間省下來檢視更為重要的研究細節。</span></p><p><span>利用R配適物種分布模型的方式眾多，也有許多前輩將常用的指令稿整理成數個package。我們將要分別使用「Wallace」進行模型配適，及「rasterVis」來視覺化分析結果。</span></p><p><a href="https://wallaceecomod.github.io/" target="_blank" rel="noopener"><span>Wallace</span></a><span>是一個R-based的彈性化的物種分布模型建立框架 (原文為：“a flexible latform for reproducible modeling of species niches and distributions”)，可以視為一個GUI app。具有開源 (open)、可擴充 (expandible)、可重複性 (reproducible) 三大特色，透過彈性且具互動性的操作介面，一步步引導使用者建立出自己的模型。Wallace曾入圍2015度 Ebbe Nielsen Challenge of the Global Biodiversity Information Facility (GBIF)，並被教授物種分布模型的相關概念。</span></p><p><a href="https://oscarperpinan.github.io/rastervis/#themes" target="_blank" rel="noopener"><span>rasterViz</span></a><span>是一個基於raster、lattice，及latticeExtra的R package，其主要功能為快速做出可投稿等級的網格資料圖，是我個人經驗中十分喜歡的一個raster data視覺化套件。</span></p><p><span>本指南會以操作步驟為主，相關模型原理在Wallace的每個階段中會友較為詳細的說明。我將分析與出圖所需要使用的指令稿整合於</span><a href="https://github.com/YTHsieh/WallaceT" target="_blank" rel="noopener"><span>此專案</span></a><span>中，使用者依照下列說明依序操作後，可以獲得：</span></p><ol>
+<li><span>預測網格圖、</span></li>
+<li><span>相關模型參數圖、</span></li>
+<li><span>以PNG及TIFF呈現的結果圖。</span></li>
+</ol><h2 id="使用教學" data-id="使用教學"><a class="anchor hidden-xs" href="#使用教學" title="使用教學"><span class="octicon octicon-link"></span></a><span>使用教學</span></h2><h3 id="Wallace-物種分布模型-操作" data-id="Wallace-物種分布模型-操作"><a class="anchor hidden-xs" href="#Wallace-物種分布模型-操作" title="Wallace-物種分布模型-操作"><span class="octicon octicon-link"></span></a><span>Wallace (物種分布模型) 操作</span></h3><h4 id="引用文獻" data-id="引用文獻"><a class="anchor hidden-xs" href="#引用文獻" title="引用文獻"><span class="octicon octicon-link"></span></a><span>引用文獻</span></h4><p><span>依照官方說明，在期刊論文中使用Wallace套件時，需要引用套件的正式發表論文，如下：</span></p><p><span>Kass JM, Vilela B, Aiello‐Lammens ME, Muscarella R, Merow C, Anderson RP. (2018). Wallace: A flexible platform for reproducible modeling of species niches and distributions built for community expansion. Methods in Ecology and Evolution. 9:1151–1156. </span><a href="https://doi.org/10.1111/2041-210X.12945" target="_blank" rel="noopener"><span>https://doi.org/10.1111/2041-210X.12945</span></a></p><h4 id="環境建置" data-id="環境建置"><a class="anchor hidden-xs" href="#環境建置" title="環境建置"><span class="octicon octicon-link"></span></a><span>環境建置</span></h4><p><span>本script檔使用的R版本號為: 4.0.2，並建議透過Rstudio來執行。使用者請先至R與Rstudio官網下載、安裝此二軟體。此外，為了使安裝設定中的devtools運作，也請安裝Rtools40。</span></p><p><span>我已經將所需要的指令稿整合於專案資料夾中，請將整個資料夾打包下載，開啟後檔案結構如下。</span></p><p><img src="https://i.imgur.com/wvLbRHt.png" alt=""></p><p><span>▲ 專案以Rstudio提供的Rproject型式統整：</span></p><p><span>-\\\ Wallace</span>
+<span>|-\\ .Rproj.user (Rproject使用者設定資料)</span>
+<span>|-\\ Inputs      (用以輸入的資料)</span>
+<span>|-\\ Outputs     (輸出的所有結果)</span>
+<span>|- .Rhistory      (Rproject歷程紀錄檔)</span>
+<span>|- main.R         (主要分析用指令稿)</span>
+<span>|- setup.R        (環境建置用指令稿)</span>
+<span>|_ Wallace.Rproj  (Rproject起始檔)</span></p><p><img src="https://i.imgur.com/CrfYhyO.png" alt="">
+<span>▲ 以左鍵雙擊兩次「Wallace.Rproj」開啟此專案。</span></p><p><img src="https://i.imgur.com/haWI13M.png" alt="">
+<span>▲ 此為Rstudio的介面，可以看到系統已同時開啟「main.R」與「setup.R」。</span></p><p><img src="https://i.imgur.com/wJkh3tf.png" alt="">
+<span>▲ 若無，請手動開啟檔案。</span></p><p><span>接下來，將逐步執行code。請先逐步執行下方的code以安裝需要的packages。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#使用R version: 4.0.2</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">#初次使用時安裝.</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">##----------1. Check the environment.-----------------------###</span></span>
+source("setup.R")
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 自動檢查R package的環境，如果不符合開發時package-</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 的版本，則自動重新安裝對應版本.</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment"># 如果上面的安裝無法正確進行，請執行下方code。</span></span>
+<span class="hljs-meta">#</span><span class="bash"> install.packages(<span class="hljs-string">'wallace'</span>)</span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">##----------------------------------------------------------###</span></span>
+</div></div></code></pre><p><span>完成安裝後，呼叫所有所需packages。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#-----------3. Load required packages.--------------##</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"> load the package</span>
+library(wallace)
+library(raster)
+library(rasterVis)
+<span class="hljs-meta">
+#</span><span class="bash"> Optional install <span class="hljs-keyword">for</span> jcolors palettee, <span class="hljs-built_in">which</span> is another good choice of visualization.</span>
+<span class="hljs-meta">#</span><span class="bash"> install.packages(<span class="hljs-string">"viridis"</span>)</span>
+library(viridis)
+<span class="hljs-meta">
+#</span><span class="bash"> Optional load <span class="hljs-keyword">for</span> country boundary download from GADM.</span>
+library(GADMTools)
+library(rnaturalearth)
+library(rnaturalearthdata)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#---------------------------------------------------##</span></span>
+</div></div></code></pre><p><span>執行Wallace GUI。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span>
+<span data-linenumber="58"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#-----4. Run Wallace to model the distribution of certain species.------##</span></span>
+<span class="hljs-meta">#</span><span class="bash"> run the app</span>
+run_wallace()
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">#-----------------------------------------------------------------------##</span></span>
+</div></div></code></pre><p><img src="https://i.imgur.com/DgGjAnq.jpg" alt="">
+<span>▲ Wallace將於電腦的預設瀏覽器中開啟，以我的電腦為例，開啟於Chrome中的新分頁，網址(阜號為： </span><a href="http://127.0.0.1:3764" target="_blank" rel="noopener"><span>http://127.0.0.1:3764</span></a><span>)</span></p><p><img src="https://i.imgur.com/8wG4jJl.jpg" alt="">
+<span>▲ 同時，Rstudio的console中顯示開啟的阜號。注意右上方的紅色「Stop」亮起，表示Code正在執行中。如果需結束Wallace，可以在瀏覽器中直接關閉分頁，或在Rstudio console中點選「Stop」，但所有未載回存檔的內容將回遺失。</span></p><h4 id="以Wallace進行SDM" data-id="以Wallace進行SDM"><a class="anchor hidden-xs" href="#以Wallace進行SDM" title="以Wallace進行SDM"><span class="octicon octicon-link"></span></a><span>以Wallace進行SDM</span></h4><p><span>我們直接借用Wallace官方Vignette上的版面介紹。點選上方Toobar中的「1. Occ Data」後可以看到下面介面。</span>
+<img src="https://i.imgur.com/JYPPmSy.jpg" alt="">
+<span>▲ 點選上方Toobar中的「1) Occ Data」切換至新介面。</span></p><p><span>在介面中： [1]為工具列 (Toolbar)，用以切換不同的功能模組；[2]為控制面板；[3]為結果面板。[2a]為此模組所依賴的packages的名稱 (可以視為相關的引用資訊)，[2b]為用以控制此模組的選單。[3a]為此模組所實際運行的R code，[3b]為呈現結果的互動式視窗，可以用滑鼠拉動看看！</span></p><p><span>值得注意的是，在[3b]可以切換的數個頁面中，「Component Guidance」為此部分模組的詳細作用與延伸參考文獻，「Module Guidance」為構成此模組的R packages的相關引用資料與實行細節。透過研讀這兩個頁面的內容，我們可以更深入了解物種分布模型的理論基礎與運作原理。</span></p><p><img src="https://i.imgur.com/beM8Z8H.png" alt="">
+<span>▲ Component Guidance。</span></p><p><img src="https://i.imgur.com/muqnVtz.png" alt="">
+<span>▲ Module Guidance。</span></p><h5 id="Obtain-Occurrence-Data" data-id="Obtain-Occurrence-Data"><a class="anchor hidden-xs" href="#Obtain-Occurrence-Data" title="Obtain-Occurrence-Data"><span class="octicon octicon-link"></span></a><span>Obtain Occurrence Data</span></h5><p><span>作為範例，本指南以昆蘭樹 (</span><em><span>Trochodendron aralioides</span></em><span> Siebold &amp; Zucc.) 做為模擬對象。使用這個物種作為範例，一是此物種被認為是一冰河孓遺植物，且臺灣為其主要分布地；二是曾有論文以物種分布模型討論此物種在臺灣的可能分布情況，方便我們進行比對。</span></p><p><span>依序照數字所示設定：1)要使用資料庫，還是自己上傳點位。2)要選用哪個資料庫，以及要搜尋的物種學名，要載入的點位上限。結束後點選「Query Database」。</span>
+<img src="https://i.imgur.com/PzMjxNQ.png" alt="">
+<span>▲ 點選後可以看到進度條顯示資料載入進度。</span></p><p><span>完成後，4. 會顯示實際上載入了多少筆點位。Wallace預設會自動排除沒有座標資料及重複的點位資料，此範例中顯示最終載入477筆點位資料，並可以在下方的互動式面板中看到點位的分布。</span></p><p><img src="https://i.imgur.com/euH9soi.png" alt="">
+<span>▲ 完成後的點位資料可以在此下載回電腦中，建議將所有載回的原始資料都儲存於專案的「Inputs」資料夾中。</span></p><p><img src="https://i.imgur.com/lrUybRr.png" alt="">
+<span>▲ 如果切換到「Occs Tbl」頁面，可以看到逐筆資料的詳細資料與資料來源。</span></p><p><img src="https://i.imgur.com/s6bAmSc.png" alt="">
+<span>▲ 以Excel開啟載回的".csv檔"，可以發現其格式同GBIF上資料下載的格式。</span></p><p><img src="https://i.imgur.com/pYPFYnh.png" alt="">
+<span>▲ 如果要自己上傳點位資料，則資料格式需如上圖，僅有name、longitude、latitude三欄 (經緯度資料格式須為WGS84)。從資料庫下載回來的點位資料，可以整理成相同的格式後，與自己的資料合併然後上傳使用，以囊括所有可能點位。</span></p><h5 id="Process-Occurrence-Data" data-id="Process-Occurrence-Data"><a class="anchor hidden-xs" href="#Process-Occurrence-Data" title="Process-Occurrence-Data"><span class="octicon octicon-link"></span></a><span>Process Occurrence Data</span></h5><p><span>在「2 Process Occs」模組中，我們可以進行資料清理。舉例而言，從GBIF下載回來的點位資料可能來自各個來源，可能是博物館中的標本資訊，也可能來自iNaturalist的觀察紀錄。這些點位資料不可避免有些偏誤，透過基本的選取或是地理上演算法的運算，我們可以校正這些偏誤，以免有偏誤的資料影響物種分布模型的配適結果。</span></p><p><span>因為我們是要預測昆蘭樹在臺灣的分布情況，以臺灣的點位資料來進行適最準確的，我們首先透過地圖選取只在台灣出現的點位資料。</span></p><p><img src="https://i.imgur.com/dOfQTWb.png" alt="">
+<span>▲ 選取「Select Occurences On Map」。</span></p><p><img src="https://i.imgur.com/RUNRguA.png" alt="">
+<span>▲ 選取這個按鈕，在地圖上畫出一個多邊形以包含需要的點位資料。</span></p><p><img src="https://i.imgur.com/WnOE1zQ.png" alt="">
+<span>▲ 畫完後按下「Select Occurences」。</span></p><p><img src="https://i.imgur.com/PZyAS0h.jpg" alt="">
+<span>▲ 可以看到只有被多邊形框起的點位被選取。</span></p><p><span>接下來，也可以透過選擇特定點位的ID，將其刪除。</span></p><p><img src="https://i.imgur.com/VeMTgjr.png" alt="">
+<span>▲ 1)切換選取模式。2)直接點選目標點位，觀察其ID，在本例為801。3)輸入目標ID後，點選「Remove Occurence」，刪除該點位。</span></p><p><img src="https://i.imgur.com/eTSxWQ7.jpg" alt="">
+<span>▲ 依序將離島以外的點位皆刪除。</span></p><p><span>點位資料可能存在取樣上的偏誤，例如：公民科學家活動頻繁的都市，周遭的物種分布紀錄可能比較密集且頻繁；又或者稀有物種的熱門觀察地點，每次遊客經過都會在同一處拍照並記錄到同一個個體。這些取樣偏誤會使模型配飾產生偏誤，在Wallace中有預設的「Spatial Thin」演算法，幫助我們台除過於密集的點位資料。</span></p><p><img src="https://i.imgur.com/mkfwrlt.png" alt="">
+<span>▲ 1)選取「Spatial Thin」。2)輸入鄰近點位的最小距離，舉例而言10km，輸入完畢後按下「Thin Occurences」。</span></p><p><img src="https://i.imgur.com/S5JOQri.png" alt="">
+<span>▲ 帶進度條跑完後，觀察右方地圖面板可以知道Wallace究竟做了甚麼？紅色的點位為留下的分布紀錄，藍色的為去除的，在地圖上相鄰10km以內的點位資料將被系統刪除而不用於配飾模型。此時透過左下方的「Download」按鈕可以下載回清理好的.csv檔。(註：此時地圖上台南及高雄的點位，我個人判斷應該不是昆蘭樹的天然分布區域，所以會透過上述從IDs刪除點位的方法排除。上述方法</span><strong><span>可以</span></strong><span>交錯使用，故不需要按照順序再次進行「Spatial Thin」。)</span></p><h5 id="Obtain-Environmental-Data" data-id="Obtain-Environmental-Data"><a class="anchor hidden-xs" href="#Obtain-Environmental-Data" title="Obtain-Environmental-Data"><span class="octicon octicon-link"></span></a><span>Obtain Environmental Data</span></h5><p><span>接下來我們需要載入環境因子資料圖層。環境因子的資料將依據我們輸入的點位紀錄被抽取出來，進而被用以配飾模型。載入的環境因子資料圖層為網格資料的型式，也就是由一大片各自具有單一數字值的小格子所組成。網格資料可以想像成是一片蓋在地圖上的布。</span></p><p><img src="https://i.imgur.com/ODMw564.png" alt="">
+<span>▲ 1)切換到「3. Env Data」。2)選擇「WorldClim Bioclims」，此為一個經常被用以物種分布模型上的全球尺度氣候資料圖層。此資料圖層是根據世界各地的氣象站資訊，經由空間內插法所獲得的全球氣候資料。WorldClim具有不同的解析度，我們選擇Wallace所能容許的最高解析度「30 arcsec」，並按下「Load Env Data」。(註：此處也可以上載使用者自己的圖層資料，只要在2.處選擇第二項「User-specified」即可。)</span></p><p><img src="https://i.imgur.com/yrGzdpj.png" alt="">
+<span>▲ 載入完成後可以在1.發現載入圖層的詳細資料。此時可以在2.處選擇要用以配飾的WorldClim，WorldClim中共有19個指標(bio 1 – bio 19)，基本上對映的是一個區域的氣溫與雨量資訊，可以到</span><a href="https://www.worldclim.org/" target="_blank" rel="noopener"><span>Worldclim官方網站</span></a><span>查看細節。如果不勾選，則預設全部代入。註：Wallace系統會自動刪除沒有網格資料可以對應的點位資料，可以於工作視窗中查看。</span></p><h5 id="Process-Environmental-Data" data-id="Process-Environmental-Data"><a class="anchor hidden-xs" href="#Process-Environmental-Data" title="Process-Environmental-Data"><span class="octicon octicon-link"></span></a><span>Process Environmental Data</span></h5><p><span>接下來我們需要裁剪載入的環境圖層，使其符合我們的點位資料，用以進行模型配適。這個步驟最主要是要決定我們的「背景點位 (background points)」撒布的區域。何謂背景點位？機器學習的模型，例如：Maxent，有時需要在模型中使用背景點位，這些模型比較背景點位的環境資料與物種真實分布點位的環境資料，藉以判斷物種分布於一地點的潛在可能。背景點位需要被撒布於目標物種可以分布的所有範圍，如果是陸生物種則背景點位的範圍不可包含水域，因此才需要裁減環境圖層。同理，地景內若有路生物種無法跨越的地理屏障，例如：大峽谷對蚯蚓來說可能難以跨越，則也需要考慮背景點位的撒布範圍，否則模型將有偏誤。</span></p><p><img src="https://i.imgur.com/gRkh4yM.png" alt="">
+<span>▲ 如圖所示：1)點選「Select Study Region」。2)點選「Minimum convex polygon」，設定「1 (degree)」，並按下「Select」。</span></p><p><img src="https://i.imgur.com/XyzYxhK.png" alt="">
+<span>▲ 各點位將以設定的參數進行連結，產生預裁剪區域。由於我們使用的物種是植物，所以這邊會需要反覆設定參數直到其只涵蓋陸域，但此指南假設此問題不存在。</span></p><p><img src="https://i.imgur.com/buwUlHK.png" alt="">
+<span>▲ 第二步是進行背景點位的撒布。1)設定欲撒布的背景點位數量，並按下「Sample」。2)這邊可以下載被選定區域屏蔽的環境圖層。</span></p><h5 id="Partition-occurrences" data-id="Partition-occurrences"><a class="anchor hidden-xs" href="#Partition-occurrences" title="Partition-occurrences"><span class="octicon octicon-link"></span></a><span>Partition occurrences</span></h5><p><span>為了評估我們的模型的解釋力，理論上我們需要數組獨立的點位資料以進行評估。但，現實情況往往是沒有這些資料，所以我們可以將現有點位資料切割成數份，分別建模，並使用沒有被用以建模的其他資料進行模型驗證。Wallace內建有「random k-fold」跟「spatial blocking」兩種資料分隔與評估的方法，使用者可以依照自己的需求挑選。完成評估後，Wallace會自動整合所有模型的資訊，並配適出一個最終模型。在此指南中，我們選用「spatial blocking」作為示範，各方法的優劣請詳見「Component Guidance」。</span></p><p><img src="https://i.imgur.com/29N8ILZ.png" alt="">
+<span>▲ 1)選擇「Spatial Partition」。2)選擇「Block (k = 4)」，並按下「Partition」。</span></p><p><img src="https://i.imgur.com/EMgwVbk.png" alt="">
+<span>▲ 右方工作區會呈現資料分割好的狀態，不同顏色的點位代表不同的分隔群組。</span></p><h5 id="Model" data-id="Model"><a class="anchor hidden-xs" href="#Model" title="Model"><span class="octicon octicon-link"></span></a><span>Model</span></h5><p><span>接下來終於要進入建模的步驟。在此指南中，我們使用「Maxent」進行建模，但實際上Wallace是可以擴充的，可以依照</span><a href="https://cmerow.github.io/RDataScience/3_4_wallace.html" target="_blank" rel="noopener"><span>官方教學</span></a><span>自行擴增可以使用的模型數量。</span></p><p><span>如果要使用dismo::maxent，需要先確認package: dismo的java資料夾中含有「maxent.jar」檔案，此為maxent的執行檔，可以</span><a href="https://biodiversityinformatics.amnh.org/open_source/maxent/" target="_blank" rel="noopener"><span>由此下載</span></a><span>。</span>
+<span>請找到「C:\Users\使用者名稱\Documents\R\win-library\4.0\dismo\java」這個路徑位置，並將下載下來的壓縮檔解壓縮至此。</span></p><p><img src="https://i.imgur.com/ZBDcymd.png" alt="">
+<span>▲ 資料夾中須包含這四個檔案。</span></p><p><img src="https://i.imgur.com/cjHwPA3.png" alt="">
+<span>▲ 1)選擇「Maxent」。2)選擇使用「maxent.jar」，並依序設定建模參數，本文依照Wallace的官方教學簡易設定，結束後按下「Run」。註：若於2)中選擇「maxent」，會使用另外一個package: maxent來執行maxent演算法，讀者可以自行嘗試。</span></p><p><img src="https://i.imgur.com/xuczBar.png" alt="">
+<span>▲ 完成後可於「Results」頁面查看結果。</span></p><p><img src="https://i.imgur.com/o4nkbqB.png" alt="">
+<span>▲ 本指南採用「avg.test.AUC」值最高的「L_3」模型進行後續投影。如何挑選最佳的模型有若干文章討論，請見「Component Guidance」。</span></p><h5 id="Visualize" data-id="Visualize"><a class="anchor hidden-xs" href="#Visualize" title="Visualize"><span class="octicon octicon-link"></span></a><span>Visualize</span></h5><p><span>Wallace提供了三種不同的視覺化方式，用以評估模型的各種面向。</span></p><p><strong><span>Maxent Evaluation Plots</span></strong><span>可以讓使用者評估個別模型之間的統計量差異。</span></p><p><img src="https://i.imgur.com/F0NkIQc.png" alt="">
+<span>▲ 1)選擇「Maxent Evaluation Plots」。2)選擇欲呈現的模型ID。3)圖片呈現於此。</span></p><p><strong><span>Plot Respense Curves</span></strong><span>可以讓我們檢視各變數值與物種潛在分布可能(predicted value)之間的關係。</span></p><p><img src="https://i.imgur.com/ckeQuaq.png" alt="">
+<span>▲ 1)選擇「Plot Respense Curves」。2)選擇欲呈現的模型ID及欲呈現的變數。3)圖片呈現於此。此圖呈現在「L_3」模型下「bio09 (Mean Temperature of Driest Quarter)」的反應曲線，如圖可以看到隨著氣溫上升，物種潛在分布可能下降，呈現一個「拉長的反S形曲線」。註：WorldClim的溫度資料是以整數儲存，所以實際溫度要除以10，例如：200 unit = 200 / 10 = 20 deg C。</span></p><p><strong><span>Map Prediction</span></strong><span>可以將潛在分布地圖疊加於底圖上，讓我們檢視配飾好的物種分布模型所預測的潛在分布範圍。</span></p><p><img src="https://i.imgur.com/S7VsjTr.png" alt="">
+<span>▲ 1)選擇「Map Prediction」。2)選擇欲呈現的模型ID，此模式下變數選擇無作用。3)選擇欲出圖的模式，按下「Plot」。4)出圖於此。5)可以將預測地圖載回供後續使用。如要使用此指南的R code出圖建議下載GeoTIFF格式(.tif)。註：每一個模式都可以將結果圖載回。</span></p><h5 id="Project" data-id="Project"><a class="anchor hidden-xs" href="#Project" title="Project"><span class="octicon octicon-link"></span></a><span>Project</span></h5><p><span>接下來，建立好的模型可以用以預測不同地區或不同時間點的物種分布可能性，只要將更動的變數帶入建立好的模型，我們可以得到新的輸出，這個過程稱為「投影 (Project)」。</span></p><p><span>在此指南中，我們使用L_3模型進行投影，並分別投影到不同地理區域(整個東亞)，與不同時間點。為了方便比較，我們使用跟前人文章中一樣的氣候變遷情境(year 2050 (average for 2041–2060), bio01 - bio19, CCSM4 under the RCP4.5 scenario.)。但結果發現前面的「30 arcsec」在Wallace中尚不支援投影到未來時間，故我們重新執行「步驟3 – 步驟8」，這次選擇「2.5 arcmin」解析度。</span></p><p><img src="https://i.imgur.com/OEL1bWi.png" alt="">
+<span>▲ 重新執行上述過程。</span></p><p><img src="https://i.imgur.com/BcnrQKr.png" alt="">
+<span>▲ 這次最好的模型是「L_2」。</span></p><p><img src="https://i.imgur.com/JGFHkwp.png" alt="">
+<span>▲ 投影到不同地理區域的範例。</span></p><p><img src="https://i.imgur.com/uyZwFTA.png" alt="">
+<span>▲ 先使用地圖工具列，在圖上畫出欲投影的範圍，再點選左邊的「Project」。</span></p><p><img src="https://i.imgur.com/WFAmtuJ.png" alt="">
+<span>▲ 如圖，在左邊設定未來情境後，按下「Project」。並可以載回投影好的圖檔。</span></p><p><img src="https://i.imgur.com/w1LO3Fu.png" alt="">
+<span>▲ 在「Calculate Environmental Similarity」模組中，我們可以計算載入圖層的環境異質度。同樣作為一項指標數值，可以視需要載回使用。</span></p><h5 id="Extracting-the-code" data-id="Extracting-the-code"><a class="anchor hidden-xs" href="#Extracting-the-code" title="Extracting-the-code"><span class="octicon octicon-link"></span></a><span>Extracting the code</span></h5><p><span>Wallace是可重複的，也就是說，剛才執行的各步驟的R code，實際上會被保留於電腦中，並且可以在此步驟載回。下一次進行相同分析，只需要執行R code即可，不需要重新點選GUI。如果你會修改code，也可以直接修正R code以達到客製化分析的效果。</span></p><p><img src="https://i.imgur.com/8zBQHvw.png" alt="">
+<span>▲ 點選載回的格式，如果是要重做分析，建議載回「Rmarkdown (.Rmd)」，另外有PDF與WORD檔可以下載。</span></p><p><img src="https://i.imgur.com/OzxG3SM.png" alt="">
+<span>▲ 以Rstudio開啟載回的Rmarkdown檔案。</span></p><p><img src="https://i.imgur.com/DTFss9I.png" alt="">
+<span>▲ Rmarkdown檔案可以被匯出成html檔。</span></p><p><img src="https://i.imgur.com/hn2PlFd.png" alt="">
+<span>▲ 載回的code文檔。</span></p><h3 id="rasterVis-出圖-操作" data-id="rasterVis-出圖-操作"><a class="anchor hidden-xs" href="#rasterVis-出圖-操作" title="rasterVis-出圖-操作"><span class="octicon octicon-link"></span></a><span>rasterVis (出圖) 操作</span></h3><p><span>前面載回的GeoTIFF檔可以透過R輸出成較美觀的發表等級圖版，相關code整合於專案資料夾中的「main.R」，以下為使用教學，請依序於Rstudio中執行各區塊。</span></p><p><span>執行「步驟2」，設定檔案參數。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#-----------2. Set parameters.---------------------------##</span></span>
+target_raster &lt;- "20200809_Trocho-_L_3_proj-extent_2.5.tif"
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定欲讀入的geotiff檔名。</span></span>
+
+plot_title &lt;- ""
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 如果不設定此項，則不會顯示圖片上方的標題。</span></span>
+
+breaks &lt;-  c(0.0001, 0.0002, 0.0005, 0.0010)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 自訂色階分級。</span></span>
+
+palette &lt;- "BuRdTheme"
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">### 選擇要使用的色板：</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 1. rasterTheme (default) (紫色-亮黃色)</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 2. RdBuTheme (紅色-藍色)</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 3. BuRdTheme (藍色-紅色)</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 4. GrTheme (黑色-白色)</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 5. BTCTheme (深藍色-白色)</span></span>
+<span class="hljs-meta">  #</span><span class="bash"><span class="hljs-comment"># 6. PuOrTheme (紫色-橘色)。</span></span>
+
+Image_Name &lt;- "test0813"
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定要儲存的圖片檔名。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">##----------------------------------------------------------###</span></span>
+</div></div></code></pre><p><span>執行「步驟5」，設定出圖模式。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="60"></span>
+<span data-linenumber="61"></span>
+<span data-linenumber="62"></span>
+<span data-linenumber="63"></span>
+<span data-linenumber="64"></span>
+<span data-linenumber="65"></span>
+<span data-linenumber="66"></span>
+<span data-linenumber="67"></span>
+<span data-linenumber="68"></span>
+<span data-linenumber="69"></span>
+<span data-linenumber="70"></span>
+<span data-linenumber="71"></span>
+<span data-linenumber="72"></span>
+<span data-linenumber="73"></span>
+<span data-linenumber="74"></span>
+<span data-linenumber="75"></span>
+<span data-linenumber="76"></span>
+<span data-linenumber="77"></span>
+<span data-linenumber="78"></span>
+<span data-linenumber="79"></span>
+<span data-linenumber="80"></span>
+<span data-linenumber="81"></span>
+<span data-linenumber="82"></span>
+<span data-linenumber="83"></span>
+<span data-linenumber="84"></span>
+<span data-linenumber="85"></span>
+<span data-linenumber="86"></span>
+<span data-linenumber="87"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#----------5. R繪圖測試區。---------------------------##</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"> 讀入下載好的物種分布模型圖檔，檔名須為.tif。</span>
+raster_filepath &lt;- paste(getwd(), "Outputs", target_raster, sep = "/")
+new_raster &lt;-  raster(raster_filepath)
+<span class="hljs-meta">
+#</span><span class="bash"> 請執行任一行，建議執行最末行。</span>
+<span class="hljs-meta">#</span><span class="bash"> 使用Rbase的plot()函數繪圖。</span>
+p &lt;- plot(new_raster, 
+          col = viridis_pal(direction = 1, option = "A")(100))
+<span class="hljs-meta">
+#</span><span class="bash"> 使用package: rasterVis 來繪圖。</span>
+
+p &lt;- rasterVis::levelplot(new_raster); p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 完全使用預設值。</span></span>
+
+p &lt;- rasterVis::levelplot(new_raster, zscaleLog = TRUE, contour = TRUE); p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 將色階進行log轉換，並繪出等高線。</span></span>
+
+p &lt;- rasterVis::levelplot(new_raster, contour = FALSE, margin = FALSE, main = plot_title); p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 如果想令電腦自動設定色階，請執行此行。</span></span>
+
+p &lt;- rasterVis::levelplot(new_raster, contour = FALSE, margin = FALSE, main = plot_title, at = breaks); p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 如果想自訂色階，請執行此行。</span></span>
+
+p &lt;- rasterVis::levelplot(new_raster, contour = FALSE, margin = FALSE, main = plot_title, par.settings = palette); p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 依設定的色板繪圖。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#---------------------------------------------------##</span></span>
+</div></div></code></pre><p><span>執行「步驟6」，設定存檔。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="89"></span>
+<span data-linenumber="90"></span>
+<span data-linenumber="91"></span>
+<span data-linenumber="92"></span>
+<span data-linenumber="93"></span>
+<span data-linenumber="94"></span>
+<span data-linenumber="95"></span>
+<span data-linenumber="96"></span>
+<span data-linenumber="97"></span>
+<span data-linenumber="98"></span>
+<span data-linenumber="99"></span>
+<span data-linenumber="100"></span>
+<span data-linenumber="101"></span>
+<span data-linenumber="102"></span>
+<span data-linenumber="103"></span>
+<span data-linenumber="104"></span>
+<span data-linenumber="105"></span>
+<span data-linenumber="106"></span>
+<span data-linenumber="107"></span>
+<span data-linenumber="108"></span>
+<span data-linenumber="109"></span>
+<span data-linenumber="110"></span>
+<span data-linenumber="111"></span>
+<span data-linenumber="112"></span>
+<span data-linenumber="113"></span>
+<span data-linenumber="114"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#--------------6. 繪圖存檔設定。---------------##</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Tiff檔</span></span>
+
+Image_Tiff &lt;- paste(Image_Name, ".tiff", sep = "")
+tiff(paste(getwd(), "Outputs", Image_Tiff, sep = "/"), units="in", width=5, height=5, res=300)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Turn on the saving board for the thematic map.</span></span>
+
+p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 出圖。</span></span>
+
+dev.off()
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Turn off the saving board. </span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment"># PNG檔</span></span>
+
+Image_PNG &lt;- paste(Image_Name, ".png", sep = "")
+png(paste(getwd(), "Outputs", Image_PNG, sep = "/"), units="in", width=5, height=5, res=300)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Turn on the saving board for the thematic map.</span></span>
+
+p
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 出圖。</span></span>
+
+dev.off()
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Turn off the saving board. </span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">#------------------------------------------------##</span></span>
+</div></div></code></pre><p><img src="https://i.imgur.com/xN3TNRL.png" alt="">
+<span>▲ 輸出的圖檔存於專案資料夾中的子資料夾「Outputs」。</span></p><p><img src="https://i.imgur.com/QHN4i8m.png" alt="">
+<span>▲ 完成輸出的圖片長這樣！</span></p><p><strong><span>註</span></strong><span>：如果想要在網格圖片上標上行政區界，請執行「步驟 Extra-plus 繪上行政區界線」，然後再次執行「步驟6」。</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="116"></span>
+<span data-linenumber="117"></span>
+<span data-linenumber="118"></span>
+<span data-linenumber="119"></span>
+<span data-linenumber="120"></span>
+<span data-linenumber="121"></span>
+<span data-linenumber="122"></span>
+<span data-linenumber="123"></span>
+<span data-linenumber="124"></span>
+<span data-linenumber="125"></span>
+<span data-linenumber="126"></span>
+<span data-linenumber="127"></span>
+<span data-linenumber="128"></span>
+<span data-linenumber="129"></span>
+<span data-linenumber="130"></span>
+<span data-linenumber="131"></span>
+<span data-linenumber="132"></span>
+<span data-linenumber="133"></span>
+<span data-linenumber="134"></span>
+<span data-linenumber="135"></span>
+<span data-linenumber="136"></span>
+<span data-linenumber="137"></span>
+<span data-linenumber="138"></span>
+<span data-linenumber="139"></span>
+<span data-linenumber="140"></span>
+<span data-linenumber="141"></span>
+<span data-linenumber="142"></span>
+<span data-linenumber="143"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#--------------Extra-plus 繪上行政區界線。---------------##</span></span>
+<span class="hljs-meta">#</span><span class="bash">如果想為繪出的圖加上行政區界，請擇一執行以下block後，再次執行<span class="hljs-string">"6."</span>。</span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">## 1. 加上臺灣或是特定國家的行政區界。</span></span>
+map &lt;- gadm_sf_loadCountries("TWN", level = 2, basefile = "./Inputs/")
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 透過R，直接從GADM database下載並載入TW縣市界，存成class-"gadm_sf".</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#預設為「臺灣」，若想更改請修改第一格國碼，詳細資料請查閱GADM官網: https://gadm.org/ 。 </span></span>
+
+boundary &lt;- map$sf
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 抽出行政區界的sf內容。</span></span>
+
+st_crs(boundary) = 4326
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定crs。</span></span>
+
+boundary_sp &lt;- as_Spatial(boundary)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 將 object: sf 轉換成 object: SpatialPolygonsDataFrame。</span></span>
+
+p &lt;- p + layer(sp.lines(boundary_sp, lwd=1, col='black'))
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 重設p的圖層</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">## 2. 加上區域內的國家區界。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#使用package: rnaturalearth, rnaturalearthdata.</span></span>
+world &lt;- ne_countries(scale = "medium", returnclass = "sf")
+class(world)
+st_crs(world) = 4326
+world_sp &lt;- as_Spatial(world)
+p &lt;- p + layer(sp.lines(world_sp, lwd=1, col='black'))
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#------------------------------------------------##</span></span>
+</div></div></code></pre><p><img src="https://i.imgur.com/njyW1ae.png" alt="">
+<span>▲ 已加上行政區界。</span></p><p><strong><span>註</span></strong><span>：如果想將兩圖放在一起，並排顯示並使用相同的色階圖例，請確認兩圖解析度相同後，執行「步驟 Extra-plus 把兩圖放在一起比較」，然後再次執行「步驟6」。(若須加上行政區界，則須先執行「步驟 Extra-plus 繪上行政區界線」，再執行「步驟 Extra-plus 把兩圖放在一起比較」。)</span></p><pre><code class="R hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="145"></span>
+<span data-linenumber="146"></span>
+<span data-linenumber="147"></span>
+<span data-linenumber="148"></span>
+<span data-linenumber="149"></span>
+<span data-linenumber="150"></span>
+<span data-linenumber="151"></span>
+<span data-linenumber="152"></span>
+<span data-linenumber="153"></span>
+<span data-linenumber="154"></span>
+<span data-linenumber="155"></span>
+<span data-linenumber="156"></span>
+<span data-linenumber="157"></span>
+<span data-linenumber="158"></span>
+<span data-linenumber="159"></span>
+<span data-linenumber="160"></span>
+<span data-linenumber="161"></span>
+<span data-linenumber="162"></span>
+<span data-linenumber="163"></span>
+<span data-linenumber="164"></span>
+<span data-linenumber="165"></span>
+<span data-linenumber="166"></span>
+<span data-linenumber="167"></span>
+<span data-linenumber="168"></span>
+<span data-linenumber="169"></span>
+<span data-linenumber="170"></span>
+<span data-linenumber="171"></span>
+<span data-linenumber="172"></span>
+<span data-linenumber="173"></span>
+<span data-linenumber="174"></span>
+<span data-linenumber="175"></span>
+<span data-linenumber="176"></span>
+<span data-linenumber="177"></span>
+<span data-linenumber="178"></span>
+<span data-linenumber="179"></span>
+<span data-linenumber="180"></span>
+<span data-linenumber="181"></span>
+<span data-linenumber="182"></span>
+<span data-linenumber="183"></span>
+<span data-linenumber="184"></span>
+<span data-linenumber="185"></span>
+<span data-linenumber="186"></span>
+<span data-linenumber="187"></span></div><div class="code"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#----------------Extra-plus 把兩圖放在一起比較。---------------##</span></span>
+
+plot_extent &lt;- raster::extent(118, 125, 20, 30)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 請設定一邊界完整涵蓋原圖範圍。</span></span>
+
+empty_raster &lt;- raster(plot_extent)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 根據object: plot_extent建立空網格。</span></span>
+
+empty_raster@crs &lt;- CRS(SRS_string= "EPSG:4326")
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定空網格的CRS，與目標網格相同。</span></span>
+res(empty_raster) &lt;- res(new_raster)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定空網格的解析度，與目標網格相同。</span></span>
+
+m1 &lt;- raster::merge(empty_raster, new_raster, filename= paste(getwd(), "Outputs", "test_merge.grd", sep = "/"), overwrite=TRUE)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 將空網格與目標網格融合，其目的為增加網格的範圍。</span></span>
+
+target_raster2 &lt;- "20200809_Trocho-_L_3_proj-time_2.5.tif"
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定第二個geotiff檔的檔名。</span></span>
+
+raster_filepath2 &lt;- paste(getwd(), "Outputs", target_raster2, sep = "/")
+new_raster2 &lt;-  raster(raster_filepath2)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 讀入第二個圖檔，檔名須為.tiff。</span></span>
+
+plot_A_crop &lt;- raster::crop(m1, new_raster2@extent)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 根據第二個Raster，裁減第一個Raster。</span></span>
+
+plot_S &lt;- stack(plot_A_crop, new_raster2)
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 將兩個raster疊加起來。</span></span>
+names(plot_S) &lt;- c("A","B")
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 設定兩圖於圖板的名稱</span></span>
+
+p2 &lt;- rasterVis::levelplot(plot_S, contour = FALSE, margin = FALSE, main = plot_title, par.settings = palette); p2
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 照模板出圖。</span></span>
+p2 &lt;- p2 + layer(sp.lines(world_sp, lwd=1, col='black')); p2
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 重疊上行政區界。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 若是只加上台灣的行政區界，請使用下面code。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># p2 &lt;- p2 + layer(sp.lines(boundary_sp, lwd=1, col='black')); p2</span></span>
+
+pA &lt;- rasterVis::levelplot(plot_A_crop, contour = FALSE, margin = FALSE, main = plot_title, par.settings = palette); pA
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 單獨輸出相同座標的A圖。</span></span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 如果想要兩圖有相同的色階圖例，可以設定"breaks"參數，並於上面多加上", at = breaks"。</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-comment">#------------------------------------------------##</span></span>
+</div></div></code></pre><p><img src="https://i.imgur.com/BgnedQj.png" alt="">
+<span>▲ 結果，把兩圖並排顯示。這邊因為我重複載入了兩次一樣的圖檔，所以兩圖看起來一樣。</span></p><p><img src="https://i.imgur.com/C2v3sz8.png" alt="">
+<span>▲ 透過最後第183行的code，也可以單獨輸出符合B圖座標的「A圖內容」。</span></p><p><strong><span>DONE！</span></strong></p><h2 id="結語" data-id="結語"><a class="anchor hidden-xs" href="#結語" title="結語"><span class="octicon octicon-link"></span></a><span>結語</span></h2><p><span>物種分布模型在政策評估與了解環境因子對物種分布的影響…等議題上十分有用，感謝Wallace團隊與R語言讓整個過程變得較為容易。此指南為一個簡單的教學，作為一個自己學習上的紀錄，也希望我的經驗可以協助到遇到相同問題的其他人。</span></p><h2 id="延伸閱讀" data-id="延伸閱讀"><a class="anchor hidden-xs" href="#延伸閱讀" title="延伸閱讀"><span class="octicon octicon-link"></span></a><span>延伸閱讀</span></h2><ol>
+<li><a href="https://wallaceecomod.github.io/" target="_blank" rel="noopener"><span>Wallace project</span></a></li>
+<li><a href="https://oscarperpinan.github.io/rastervis/#themes" target="_blank" rel="noopener"><span>rasterVis官方介紹</span></a></li>
+<li><a href="https://www.rs-patial.org/r/2018/10/25/ggplot2-sf.html" target="_blank" rel="noopener"><span>R spatial繪圖指南―Drawing beautiful maps programmatically with R, sf and ggplot2</span></a></li>
+<li><a href="https://cran.r-project.org/web/packages/rnaturalearth/vignettes/rnaturalearth.html" target="_blank" rel="noopener"><span>rnaturalearth</span></a></li>
+<li><a href="https://pjbartlein.github.io/REarthSysSci/rasterVis01.html" target="_blank" rel="noopener"><span>Plots with raster and rasterVis</span></a></li>
+<li><a href="https://www.nature.com/articles/s41598-018-38054-9#Sec9" target="_blank" rel="noopener"><span>Briscoe Runquist RD, Lake T, Tiffin P. et al. (2019) Species distribution models throughout the invasion history of Palmer amaranth predict regions at risk of future invasion and reveal challenges with modeling rapidly shifting geographic ranges. Scientific Reports 9: 2426.</span></a></li>
+<li><a href="https://www.mdpi.com/1999-4907/10/1/7/htm#B43-forests-10-00007" target="_blank" rel="noopener"><span>Lin CT, Chiu CA (2019) The Relic Trochodendron aralioides Siebold &amp; Zucc. (Trochodendraceae) in Taiwan: ensemble distribution modeling and climate change impacts. Forests 10: 7.</span></a></li>
+</ol><h2 id="Acknowledgment" data-id="Acknowledgment"><a class="anchor hidden-xs" href="#Acknowledgment" title="Acknowledgment"><span class="octicon octicon-link"></span></a><span>Acknowledgment</span></h2><p><span>謝謝 廖一璋學長(Dr. Yi-Chang Liao) 啟發並支持我整理這份筆記。</span></p><h2 id="變更日誌" data-id="變更日誌"><a class="anchor hidden-xs" href="#變更日誌" title="變更日誌"><span class="octicon octicon-link"></span></a><span>變更日誌</span></h2><ul>
+<li><span>2020/08/14-16:11 完成Version1.0的使用說明及相關code。</span></li>
+</ul><h2 id="Appendix-and-FAQ" data-id="Appendix-and-FAQ"><a class="anchor hidden-xs" href="#Appendix-and-FAQ" title="Appendix-and-FAQ"><span class="octicon octicon-link"></span></a><span>Appendix and FAQ</span></h2><div class="alert alert-info">
+<p><strong><span>Find this document incomplete?</span></strong><span> Leave a comment!</span></p>
+</div><h6 id="tags-GIS-Documentation-SDMs-R" data-id="tags-GIS-Documentation-SDMs-R"><a class="anchor hidden-xs" href="#tags-GIS-Documentation-SDMs-R" title="tags-GIS-Documentation-SDMs-R"><span class="octicon octicon-link"></span></a><span>tags: </span><code>GIS</code><span> </span><code>Documentation</code><span> </span><code>SDMs</code><span> </span><code>R</code></h6></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Wallace使用指南" title="Wallace使用指南">Wallace使用指南</a><ul class="nav">
+<li><a href="#Table-of-Contents" title="Table of Contents">Table of Contents</a></li>
+<li><a href="#專案介紹" title="專案介紹">專案介紹</a></li>
+<li><a href="#使用教學" title="使用教學">使用教學</a><ul class="nav">
+<li><a href="#Wallace-物種分布模型-操作" title="Wallace (物種分布模型) 操作">Wallace (物種分布模型) 操作</a></li>
+<li><a href="#rasterVis-出圖-操作" title="rasterVis (出圖) 操作">rasterVis (出圖) 操作</a></li>
+</ul>
+</li>
+<li><a href="#結語" title="結語">結語</a></li>
+<li><a href="#延伸閱讀" title="延伸閱讀">延伸閱讀</a></li>
+<li><a href="#Acknowledgment" title="Acknowledgment">Acknowledgment</a></li>
+<li><a href="#變更日誌" title="變更日誌">變更日誌</a></li>
+<li><a href="#Appendix-and-FAQ" title="Appendix and FAQ">Appendix and FAQ</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Wallace使用指南" title="Wallace使用指南">Wallace使用指南</a><ul class="nav">
+<li><a href="#Table-of-Contents" title="Table of Contents">Table of Contents</a></li>
+<li><a href="#專案介紹" title="專案介紹">專案介紹</a></li>
+<li><a href="#使用教學" title="使用教學">使用教學</a><ul class="nav">
+<li><a href="#Wallace-物種分布模型-操作" title="Wallace (物種分布模型) 操作">Wallace (物種分布模型) 操作</a></li>
+<li><a href="#rasterVis-出圖-操作" title="rasterVis (出圖) 操作">rasterVis (出圖) 操作</a></li>
+</ul>
+</li>
+<li><a href="#結語" title="結語">結語</a></li>
+<li><a href="#延伸閱讀" title="延伸閱讀">延伸閱讀</a></li>
+<li><a href="#Acknowledgment" title="Acknowledgment">Acknowledgment</a></li>
+<li><a href="#變更日誌" title="變更日誌">變更日誌</a></li>
+<li><a href="#Appendix-and-FAQ" title="Appendix and FAQ">Appendix and FAQ</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
