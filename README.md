@@ -518,6 +518,9 @@ pA <- rasterVis::levelplot(plot_A_crop, contour = FALSE, margin = FALSE, main = 
 6. [Briscoe Runquist RD, Lake T, Tiffin P. et al. (2019) Species distribution models throughout the invasion history of Palmer amaranth predict regions at risk of future invasion and reveal challenges with modeling rapidly shifting geographic ranges. Scientific Reports 9: 2426.](https://www.nature.com/articles/s41598-018-38054-9#Sec9)
 7. [Lin CT, Chiu CA (2019) The Relic Trochodendron aralioides Siebold & Zucc. (Trochodendraceae) in Taiwan: ensemble distribution modeling and climate change impacts. Forests 10: 7.](https://www.mdpi.com/1999-4907/10/1/7/htm#B43-forests-10-00007)
 
+## Acknowledgment
+謝謝 廖一璋學長(Dr. Yi-Chang Liao) 啟發並支持我整理這份筆記。
+
 ## 變更日誌
 * 2020/08/14-16:11 完成Version1.0的使用說明及相關code。
 
